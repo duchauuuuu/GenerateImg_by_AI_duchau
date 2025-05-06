@@ -58,24 +58,24 @@ export const stepsData = [
 export const testimonialsData = [
     {
         image:profile_img_1,
-        name:'Donald Jackman',
-        role:'Graphic Designer',
+        name:'Đức Hậu',
+        role:'Nhà thiết kế đồ họa',
         stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        text:`Tôi đã sử dụng Imagify - H trong gần hai năm, chủ yếu là cho Instagram và công cụ này cực kỳ thân thiện với người dùng, giúp công việc của tôi dễ dàng hơn nhiều.`
     },
     {
         image:profile_img_2,
-        name:'Richard Nelson',
-        role:'Content Creator',
-        stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        name:'Thanh Nhã',
+        role:'Người sáng tạo nội dung',
+        stars:4,
+        text:`Tôi đã sử dụng Imagify - H trong gần hai năm, chủ yếu là cho Instagram và công cụ này cực kỳ thân thiện với người dùng, giúp công việc của tôi dễ dàng hơn nhiều.`
     },
     {
         image:profile_img_1,
-        name:'Donald Jackman',
-        role:' Graphic Designer',
+        name:'Minh Tâm',
+        role:'Nhà thiết kế đồ họa',
         stars:5,
-        text:`I've been using bg.removal for nearly two years, primarily for Instagram, and it has been incredibly user-friendly, making my work much easier.`
+        text:`Tôi đã sử dụng Imagify - H trong gần hai năm, chủ yếu là cho Instagram và công cụ này cực kỳ thân thiện với người dùng, giúp công việc của tôi dễ dàng hơn nhiều.`
     },
 ]
 
