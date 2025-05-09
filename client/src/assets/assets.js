@@ -84,18 +84,18 @@ export const plans = [
       id: 'Basic',
       price: 10,
       credits: 100,
-      desc: 'Best for personal use.'
+      desc: 'Tốt nhất cho mục đích sử dụng cá nhân.'
     },
     {
       id: 'Advanced',
       price: 50,
       credits: 500,
-      desc: 'Best for business use.'
+      desc: 'Tốt nhất cho mục đích sử dụng kinh doanh.'
     },
     {
       id: 'Business',
       price: 250,
       credits: 5000,
-      desc: 'Best for enterprise use.'
+      desc: 'Tốt nhất cho mục đích sử dụng doanh nghiệp.'
     },
   ]
