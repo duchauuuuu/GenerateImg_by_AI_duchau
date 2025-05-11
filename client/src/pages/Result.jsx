@@ -1,18 +1,29 @@
 import React, { useState } from 'react'
 import {assets} from '../assets/assets'
 import {motion} from 'framer-motion'
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
 const Result = () => {
   const [image,setImage] = useState(assets.sample_img_1)
   const [isImageLoaded, setIsImageLoaded] = useState(false)
   const [loading, setLoading] = useState(false)
   const [input,setInput] = useState('')
-
+  const {generateImage} = useContext(AppContext)
   const onSubmitHandler =async (e) => {
-
+      e.preventDefault();
+      setLoading(true)
+      if(input){
+        const image = await generateImage(input);
+        if(image){
+          setIsImageLoaded(true)
+          setImage(image);
+        }
+      }
+      setLoading(false)
   }
 
   return (
-    <motion.form onClick={(e)=>{onSubmitHandler}} className='flex flex-col min-h-[90vh] 
+    <motion.form onSubmit={onSubmitHandler} className='flex flex-col min-h-[90vh] 
     justify-center items-center'
       initial={{opacity:0.2, y:100}}
     transition={{duration:1}}
@@ -30,7 +41,7 @@ const Result = () => {
     { !isImageLoaded && <div className='flex w-full max-w-xl bg-neutral-500 text-white text-sm p-0.5 mt-10 rounded-full'>
       <input onChange={(e)=>{setInput(e.target.value)}} value={input} type='text' placeholder='Mô tả hình ảnh mà bạn muốn tạo' className='flex-1 bg-transparent 
       outline-none ml-8 max-sm:w-20 placeholder-color'></input>
-      <button type='submit' className='bg-zinc-900 px-10 
+      <button  type='submit' className='bg-zinc-900 px-10 
       sm:px-16 py-3 rounded-full'>Tạo ảnh</button>
     </div>
     }
