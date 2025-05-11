@@ -1,18 +1,17 @@
 import userModel from "../models/userModel.js";
 import transactionModel from "../models/transactionModel.js";
-import bcrypt from "bcrypt";
+import bcryptjs from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { createHmac } from "crypto";
 import axios from "axios";
-
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     if (!name || !email || !password) {
       return res.json({ success: false, message: "Nhập tất cả thông tin" });
     }
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const salt = await bcryptjs.genSalt(10);
+    const hashedPassword = await bcryptjs.hash(password, salt);
     const userData = {
       name,
       email,
@@ -39,7 +38,7 @@ export const loginUser = async (req, res) => {
     if (!user) {
       return res.json({ success: false, message: "Người dùng không tồn tại 1" });
     }
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcryptjs.compare(password, user.password);
     if (isMatch) {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
       res.json({ success: true, token, user: { name: user.name } });
